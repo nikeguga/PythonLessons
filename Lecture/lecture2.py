@@ -1,161 +1,96 @@
-# LISTS
+# def sumNumbers(n):
+#     sumSum = 0
+#     for i in range (1, n+1):
+#         sumSum += i
+#     print(sumSum)
 
-# empty lists creation
+# sumNumbers(12) функция для печати
 
-# list_1 = []
-# list_1 = list()
+# def sumNum(n):
+#     sumSum = 0
+#     for i in range(1, n + 1):
+#         sumSum += i
+#     return sumSum
 
-# initialise list with elements:
+# print(sumNum(15))
 
-# list_2 = [1, 2, 3, 4, 5] # you just put the elements inside the brackets, in print we will see brackets. 
-#If not needed - we need to use * in print
-# print(*list_2) #here, no brackets
+# сумма для неограниченного количества аргументов
 
-# print(len(list_2)) # len is applicable to all types of data
-
-# calling out the elements of list is easy: 
-
-# print(list_2[0])
-
-# ammending list
-
-# list_1 = [1, 5]
-# print(list_1)
-# list_1.append(2) #adding element as the new last one
-# print(list_1)
-# list_1.pop()
-# print(list_1) #removing last element
-# # we can use pop to delete desired element via adding index of the element in brackets:
-
-# list_2 = [1, 2, 3, 8283, 49, 69]
-# print(list_2)
-# list_2.pop(3)
-# print(list_2)
-
-# # we can insert element on desired position via "insert" function. we put() first argument goes for index, second for the element
-
-# list_2.insert(3, 881324712)
-# print(list_2)
-
-# # lists also can be sliced
-
-# print(list_2[1:3])
-
-# #we can also input steps in the slice, so we can choose several pieces
-
-# print(list_2[::2]) #all list with step of 2
-
-# TUPLES
-
-#tuple - unchanging list. faster, safer if no changes are intended, less memory used
-#we can initialise tuples as empty:
-
-# t = ()
-
-# # or we can initialise them with element:
-
-# t = (1, ) # we do need to put comma in here
-
-# # we can make tuple out of the list:
-
-# listToBeTupled = [1, 2, 3, 4, 69]
-# print(listToBeTupled)
-# tupledList = tuple(listToBeTupled)
-# print(tupledList) #we can delete brackets in the output via adding * before the argument
-# print(type(tupledList))
-# #we can also separate tuple for veriables via multiple assignment:
-# a, b, c, d, e = tupledList
-# print(a, b, c, d, e)
-
-# DICTIONARIES
-
-# dic_k = {} #created empty dictionary
-# dic_k2 = dict() #another way to create empty dictionary
-# dic_k2["q"] = "qwerty" # we made dictionary with element "qwerty" and the key "q"
-# print(dic_k2)
-# dic_k2["w"] = "suck" #we added new key and element
-# print(dic_k2)
-# print(dic_k2["w"]) #this how we print an element of the dictionary
-# we have keys values and items
-# #dictrionaries support all types of data, including lists and tuples, and you can put all element types within one dictionary
-# del dic_k2["q"] #this how we delete elements of dictionary
-# print(dic_k2)
-# print(dic_k2.items())
-
-# dictionary = {}
-# dictionary ={'up': '↑', 'left': '←', 'down': '↓', 'right': '→'}
-# print(dictionary) # {'up':'↑', 'left':'←', 'down':'↓', 'right':'→'}
-# print(dictionary['left']) # ←
-# # типы ключей могут отличаться
-# print(dictionary['up']) # ↑
-# # типы ключей могут отличаться
-# dictionary['left'] = '⇐'
-# print(dictionary['left']) # ⇐
-# # print(dictionary['type']) # KeyError: 'type'
-# del dictionary['left'] # удаление элемента
-# for item in dictionary: # for (k,v) in dictionary.items():
-#     print('{}: {}'.format(item, dictionary[item]))
-# # up: ↑
-# # down: ↓
-# # right: →
-
-# QUANTITIES
-
-# colors = {"red", "green", "blue"} # here is quantity
-# print(colors)
-# colors.add("spinach") # how we add element into a quantity
-# # here's the thing, if we are trying to add an element which is already in quantity - nothing will change, cause it holds only value
-# print(colors)
-# colors.remove("red") #removing element, obvious, isn't it?
-# print(colors)
-# # cool way to remove:
-# colors.discard("blue") #it removes argument, if it is within the quantity, and if not - slips, while "remove" will give you a mistake
-# print(colors)
-# # we can delete every element with colors.clear() - it will return an empty quantity
-# we can set an empty quantity:
-# q = set() #here we go
-
-# we can also do math with quantities:
-# a = {1, 2, 3, 5, 8}
-# b = {2, 5, 8, 13, 21}
-# c = a.copy() # c = {1, 2, 3, 5, 8}
-# u = a.union(b) # u = {1, 2, 3, 5, 8, 13, 21}
-# i = a.intersection(b) # i = {8, 2, 5} # crossing, elements in both quantities
-# dl = a.difference(b) # dl = {1, 3}
-# dr = b.difference(a) # dr = {13, 21}
-# q=a.union(b).difference(a.intersection(b)) # {1, 21, 3, 13}
-# we can freeze a quantity
-# a = {1, 8, 6}
-# b = frozenset(a) # same data within, but unchangable
-
-# LIST COMPREHENSION
-
-# it is a feature of python. We use "for" cycle within this and it also may contain conditions via if-else
-
-# list_1 = [exp for item in iterable]
-# list_1 = [exp for item in iterable (if conditional)]
-
-# so we need a fucka list withnumbers from 1 to 100. we can go as below:
-
-# list_1 = []
-# for i in range(1, 101):
-#     list_1.append(i)
-# print(list_1)
-
-# or we can do this crazy muthafacka
-
-# list_1 = [i for i in range(1, 101)] 
-
-# # if we need evens:
-
-# list_1 = [i for i in range(1, 101) if i % 2 == 0]
-
-# # if we decided to make tuples:
-
-# list_1 = [(i, i) for i in range(1, 101) if i % 2 == 0] 
-
-# # and even some math action
-
-# list_1 = [i * 2 for i in range(10) if i % 2 == 0]
+# def sum_str(*args):
+#     res = " "
+#     for i in args:
+#         res += i
+#     return res
 
 
+# print(sum_str('k', 'e', 'k'))
+
+# модули. делаешь файл в той же папке, или закидываешь готовый туда.
+# далее импортируешь его. потом берешь название файла, точка + название функции и аргументы. Вот так у тебя появилась своя библиотека
+# import module as m1
+# m1.function(1,2)
+# или
+
+# from module import *
+
+# РЕКУРСИЯ
+
+# пользователь вводит число n и программа выводит последовательность фиббоначи с соответствующим количеством значений. считаем от 0
+
+# def fibo(n):
+#     if n in [1, 2]: # basis of recurssion
+#         return 1
+#     return fibo(n-1) + fibo(n-2)
+
+# list1 = []
+# for i in range(1, 10):
+#     list1.append(fibo(i))
+# print(list1)
+
+# Быстрая сортировка
+
+# def quick_sort(array):
+#     if len(array) <= 1: # если длина списка после очередной теации будет 1 или меньше - возвращается это значение и цикл прекращается
+#         return array
+#     else:
+#         pivot = array[0]  # начальный элемент - всегда первый элемент массива
+#     less = [i for i in array[1:] if i <= pivot] # создается массив с элементами менее либо равными пивоту
+#     more = [i for i in array[1:] if i > pivot] # создается элемент массива с элементами строго более пивота
+#     return quick_sort(less) + [pivot] + quick_sort(more) # сложение отсортированного списка, при этом вызов рекурсии для неотсортированных частей
+
+# print(quick_sort([14, 5, 9, 6, 3, 58, 7, 5, 2, 7]))
+
+# Сортировка слиянием
+
+# def merge_sort(nums):
+#     if len(nums) > 1:
+#         mid = len(nums)//2  # делим список надвое
+#         # формируем левый список со значениями менее серидины
+#         left = nums[:mid]
+#         # формируем правый список со значением больше середины
+#         right = nums[mid:]
+#         merge_sort(left)  # рекрсия
+#         merge_sort(right)
+#         i = j = k = 0  # создаем переменные для цикла, i - левый, j - правый, k - общий ход
+#         while i < len(left) and j < len(right):
+#             if left[i] < right[j]:
+#                 nums[k] = left[i] # сравниваем два значения - добавляем в новый список 
+#                 i += 1
+#             else:
+#                 nums[k] = right[j]
+#                 j += 1
+#             k += 1
+
+#         while i < len(left): # циклы на остатки
+#             nums[k] = left[i]
+#             i += 1
+#             k += 1
+
+#         while j < len(right):
+#             nums[k] = right[j]
+#             j += 1
+#             k += 1
+
+# list1 = [1, 5, 6, 9, 8, 7, 2, 1, 69, 2, 4]
+# merge_sort(list1)
+# print(list1)
