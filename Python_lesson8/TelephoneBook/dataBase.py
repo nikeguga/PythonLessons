@@ -24,9 +24,9 @@ def killer_ficha(arg):
             if arg in lst[i]:
                 del lst[i]
                 file.close
-                with open('phonebook.txt', 'w', encoding='utf-8') as file:
-                    file.writelines(lst)
-                    break
+    with open('phonebook.txt', 'w', encoding='utf-8') as file:
+        file.writelines(lst)
+                                
             
 
 
@@ -46,7 +46,8 @@ def replace_data(arg):
                         sublist[j] = input("input new data: ")
                         lst[i] = sublist[0] + " " + sublist[1] + " " + sublist[2] + "\n"
                         file.close
-                        with open('phonebook.txt', 'w', encoding='utf-8') as file:
-                            file.writelines(lst)
-                            break
+
+    with open('phonebook.txt', 'w', encoding='utf-8') as file:
+        file.writelines(lst)
+        
 
